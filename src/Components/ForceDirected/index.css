@@ -1,0 +1,12 @@
+/* line connecting nodes */
+.links line {
+    stroke: #999;
+    stroke-opacity: 0.6;
+    pointer-events: all;
+}
+/* line around nodes */
+.nodes circle {
+    pointer-events: all;
+    stroke: #777;
+    stroke-width: 0px; /* not visible */
+}
