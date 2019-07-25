@@ -11,6 +11,7 @@ interface IProps {
     layering: 'Coffman Graham (medium)' | 'Longest Path (fast)' | 'Simplex (slow)';
     decross: 'Optimal (slow)' | 'Two Layer (flast)' | 'Two Layer Opt (medium)';
     coord: 'Center (fast)' | 'Greedy (medium)' | 'Minimum Curves (slow)' | 'Vertical (slow)';
+    arrow: 'start' | 'end';
 }
 
 export default class DAG extends React.Component<IProps, {}> {
@@ -118,13 +119,23 @@ export default class DAG extends React.Component<IProps, {}> {
                 // node center, on the last line segment of the edge. This means that edges
                 // that only span ine level will work perfectly, but if the edge bends,
                 // this will be a little off.
-                const dx = start.x - end.x;
-                const dy = start.y - end.y;
-                const scale = nodeRadius * 1.15 / Math.sqrt(dx * dx + dy * dy);
-                // This is the angle of the last line segment
-                const angle = Math.atan2(-dy, -dx) * 180 / Math.PI + 90;
-                return `translate(${end.x + nodeRadius + dx * scale},`
-                    + `${end.y + nodeRadius + dy * scale}) rotate(${angle})`;
+                if (this.props.arrow === 'start') {
+                    const dx = end.x - start.x;
+                    const dy = end.y - start.y;
+                    const scale = nodeRadius * 1.15 / Math.sqrt(dx * dx + dy * dy);
+                    // This is the angle of the last line segment
+                    const angle = Math.atan2(-dy, -dx) * 180 / Math.PI + 90;
+                    return `translate(${start.x + nodeRadius + dx * scale},`
+                        + `${start.y + nodeRadius + dy * scale}) rotate(${angle})`;
+                } else if (this.props.arrow === 'end') {
+                    const dx = start.x - end.x;
+                    const dy = start.y - end.y;
+                    const scale = nodeRadius * 1.15 / Math.sqrt(dx * dx + dy * dy);
+                    // This is the angle of the last line segment
+                    const angle = Math.atan2(-dy, -dx) * 180 / Math.PI + 90;
+                    return `translate(${end.x + nodeRadius + dx * scale},`
+                        + `${end.y + nodeRadius + dy * scale}) rotate(${angle})`;
+                }
             })
             .attr('fill', (fill: any) => colorMap[fill.target.id])
             .attr('stroke', 'white')
