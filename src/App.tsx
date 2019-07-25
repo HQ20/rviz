@@ -1,6 +1,6 @@
 import React from 'react';
-import ForceDirected from './Components/ForceDirected';
 import DAG from './Components/DAG';
+import ForceDirected from './Components/ForceDirected';
 
 import data from './data';
 
@@ -14,9 +14,10 @@ const App: React.FC = () => {
                 layering={'Simplex (slow)'}
                 decross={'Optimal (slow)'}
                 coord={'Vertical (slow)'}
+                arrow={'end'}
             />
         </div>
     );
-}
+};
 
 export default App;
