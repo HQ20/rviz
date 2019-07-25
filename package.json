@@ -4,16 +4,25 @@
     "license": "Apache-2.0",
     "dependencies": {
         "@types/d3": "5.7.2",
+        "@types/enzyme": "^3.10.3",
+        "@types/enzyme-adapter-react-16": "^1.0.5",
         "@types/jest": "24.0.15",
         "@types/node": "12.6.8",
         "@types/react": "16.8.23",
         "@types/react-dom": "16.8.5",
+        "@types/react-test-renderer": "^16.8.3",
         "d3": "5.9.7",
         "d3-dag": "0.2.6",
         "react": "16.8.6",
         "react-dom": "16.8.6",
         "react-scripts": "3.0.1",
-        "typescript": "3.5.3",
+        "react-test-renderer": "^16.8.6",
+        "typescript": "3.5.3"
+    },
+    "devDependencies": {
+        "enzyme": "3.9.0",
+        "enzyme-adapter-react-16": "1.12.1",
+        "jest": "24.7.1",
         "tslint": "5.18.0",
         "tslint-react": "4.0.0"
     },
