@@ -7,7 +7,14 @@ import data from './data';
 const App: React.FC = () => {
     return (
         <div className="App">
-            <DAG width={600} height={600} grafo={data} />
+            <DAG
+                width={600}
+                height={600}
+                grafo={data}
+                layering={'Simplex (slow)'}
+                decross={'Optimal (slow)'}
+                coord={'Vertical (slow)'}
+            />
         </div>
     );
 }

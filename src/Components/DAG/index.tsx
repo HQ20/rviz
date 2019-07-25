@@ -8,13 +8,16 @@ interface IProps {
     width: number;
     height: number;
     grafo: any;
+    layering: 'Coffman Graham (medium)' | 'Longest Path (fast)' | 'Simplex (slow)';
+    decross: 'Optimal (slow)' | 'Two Layer (flast)' | 'Two Layer Opt (medium)';
+    coord: 'Center (fast)' | 'Greedy (medium)' | 'Minimum Curves (slow)' | 'Vertical (slow)';
 }
 
 export default class DAG extends React.Component<IProps, {}> {
     private ref!: SVGSVGElement;
 
     public componentDidMount() {
-        const { width, height, grafo } = this.props;
+        const { width, height, grafo, layering, decross, coord } = this.props;
         const context: any = d3.select(this.ref);
 
         // This code only handles rendering
@@ -42,9 +45,6 @@ export default class DAG extends React.Component<IProps, {}> {
             'Minimum Curves (slow)': d3Dag.coordMinCurve(),
             'Vertical (slow)': d3Dag.coordVert(),
         };
-        const layering = 'Simplex (slow)';
-        const decross = 'Optimal (slow)';
-        const coord = 'Vertical (slow)';
 
         const dag = d3Dag.dagStratify()(grafo);
         const layout = d3Dag.sugiyama()
