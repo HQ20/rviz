@@ -1,22 +1,20 @@
 import React from 'react';
 import DAG from './Components/DAG';
-import ForceDirected from './Components/ForceDirected';
-
-import data from './data';
+import dagData from './Components/DAG/__test__/dummyData';
 
 const App: React.FC = () => {
     return (
-        <div className="App">
+        <>
             <DAG
                 width={600}
                 height={600}
-                grafo={data}
+                grafo={dagData}
                 layering={'Simplex (slow)'}
                 decross={'Optimal (slow)'}
                 coord={'Vertical (slow)'}
                 arrow={'end'}
             />
-        </div>
+        </>
     );
 };
 

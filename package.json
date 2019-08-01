@@ -5,8 +5,6 @@
     "files": [
         "src/"
     ],
-    "scripts": {
-    },
     "dependencies": {
         "@types/d3": "5.7.2",
         "@types/enzyme": "^3.10.3",
