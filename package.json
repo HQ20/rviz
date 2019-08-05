@@ -18,6 +18,7 @@
         "d3-dag": "0.2.6",
         "react": "16.8.6",
         "react-test-renderer": "16.8.6",
+        "topojson": "^3.0.2",
         "typescript": "3.5.3"
     },
     "devDependencies": {
