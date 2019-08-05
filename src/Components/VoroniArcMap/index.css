@@ -1,0 +1,23 @@
+.land {
+    fill: #ddd;
+}
+
+.state-borders {
+    fill: none;
+    stroke: #fff;
+}
+
+.airport-arc {
+    fill: none;
+}
+
+.airport:hover .airport-arc {
+    stroke: #f00;
+}
+
+.airport-cell {
+    fill: none;
+    stroke: #000;
+    stroke-opacity: 0.1;
+    pointer-events: all;
+}
