@@ -39,7 +39,7 @@ export default class ForceDirected extends React.Component<IProps, {}> {
 
         this.simulation = d3.forceSimulation()
             .force('link', d3.forceLink()
-                .id((nodeData: d3.SimulationNodeDatum, i: number, nodesData: d3.SimulationNodeDatum[]) => {
+                .id((nodeData: d3.SimulationNodeDatum) => {
                     // for some reason, this type is not correct
                     return (nodeData as any).id;
                 }))

@@ -33,10 +33,6 @@ export default class VoroniArcMap extends React.Component<IProps, {}> {
             .translate([width / 2, height / 2])
             .scale(1280);
 
-        const radius = d3.scaleSqrt()
-            .domain([0, 100])
-            .range([0, 14]);
-
         const path: any = d3.geoPath()
             .projection(projection)
             .pointRadius(2.5);
