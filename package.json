@@ -1,31 +1,56 @@
 {
     "name": "reviz",
     "version": "0.0.1-alpha",
+    "author": "obernardovieira",
     "license": "Apache-2.0",
-    "files": [
-        "src/"
-    ],
+    "repository": "hq20/reviz",
+    "main": "dist/index.js",
+    "module": "dist/index.es.js",
+    "jsnext:main": "dist/index.es.js",
+    "engines": {
+        "node": ">=10",
+        "npm": ">=6"
+    },
+    "scripts": {
+        "test": "cross-env CI=1 react-scripts-ts test --env=jsdom",
+        "test:watch": "react-scripts-ts test --env=jsdom",
+        "build": "rollup -c",
+        "start": "rollup -c -w",
+        "prepare": "yarn run build",
+        "predeploy": "cd example && yarn install && yarn run build"
+    },
     "dependencies": {
+        "prop-types": "15.7.2",
+        "react": "16.9.0",
+        "react-dom": "16.9.0",
         "@types/d3": "5.7.2",
-        "@types/enzyme": "^3.10.3",
-        "@types/enzyme-adapter-react-16": "1.0.5",
-        "@types/jest": "24.0.15",
-        "@types/node": "12.6.8",
-        "@types/react": "16.8.23",
-        "@types/react-dom": "16.8.5",
-        "@types/react-test-renderer": "^16.8.3",
         "d3": "5.9.7",
         "d3-dag": "0.2.6",
-        "react": "16.8.6",
-        "react-test-renderer": "16.8.6",
-        "topojson": "^3.0.2",
-        "typescript": "3.5.3"
+        "d3-scale": "3.0.1",
+        "topojson": "3.0.2"
     },
     "devDependencies": {
-        "enzyme": "3.9.0",
-        "enzyme-adapter-react-16": "1.12.1",
-        "jest": "24.7.1",
-        "tslint": "5.18.0",
-        "tslint-react": "4.0.0"
-    }
+        "@svgr/rollup": "4.3.2",
+        "@types/jest": "24.0.17",
+        "@types/react": "16.9.1",
+        "@types/react-dom": "16.8.5",
+        "babel-core": "6.26.3",
+        "babel-runtime": "6.26.0",
+        "cross-env": "5.2.0",
+        "react": "16.9.0",
+        "react-dom": "16.9.0",
+        "react-scripts-ts": "3.1.0",
+        "rollup": "1.19.4",
+        "rollup-plugin-babel": "4.3.3",
+        "rollup-plugin-commonjs": "10.0.2",
+        "rollup-plugin-node-resolve": "5.2.0",
+        "rollup-plugin-peer-deps-external": "2.2.0",
+        "rollup-plugin-postcss": "2.0.3",
+        "rollup-plugin-typescript2": "0.22.1",
+        "rollup-plugin-url": "2.2.2",
+        "typescript": "3.5.3"
+    },
+    "files": [
+        "dist"
+    ]
 }
