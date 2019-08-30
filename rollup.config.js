@@ -3,6 +3,8 @@ import commonjs from 'rollup-plugin-commonjs'
 import external from 'rollup-plugin-peer-deps-external'
 // import postcss from 'rollup-plugin-postcss-modules'
 import postcss from 'rollup-plugin-postcss'
+import cssnext from 'postcss-cssnext';
+import cssnano from 'cssnano';
 import resolve from 'rollup-plugin-node-resolve'
 import url from 'rollup-plugin-url'
 import svgr from '@svgr/rollup'
@@ -28,7 +30,11 @@ export default {
     plugins: [
         external(),
         postcss({
-            modules: true
+            plugins: [
+                cssnext({ warnForDuplicates: false, }),
+                cssnano(),
+            ],
+            extensions: ['.css'],
         }),
         url(),
         svgr(),
