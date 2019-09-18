@@ -1,15 +1,13 @@
 {
-    "name": "reviz-example",
-    "homepage": "https://obernardovieira.github.io/reviz",
-    "version": "0.0.0",
-    "license": "MIT",
-    "private": true,
+    "name": "rviz-example",
+    "homepage": "./",
+    "version": "0.0.1",
     "dependencies": {
         "prop-types": "^15.6.2",
         "react": "^16.4.1",
         "react-dom": "^16.4.1",
-        "react-scripts": "^1.1.4",
-        "reviz": "link:.."
+        "react-scripts": "1.1.4",
+        "rviz": "link:.."
     },
     "scripts": {
         "start": "react-scripts start",

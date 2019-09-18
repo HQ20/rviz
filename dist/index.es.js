@@ -2179,8 +2179,6 @@ function interpolateTransform(parse, pxComma, pxParen, degParen) {
 var interpolateTransformCss = interpolateTransform(parseCss, "px, ", "px)", "deg)");
 var interpolateTransformSvg = interpolateTransform(parseSvg, ", ", ")", ")");
 
-var rho = Math.SQRT2;
-
 function cubehelix$1(hue) {
   return (function cubehelixGamma(y) {
     y = +y;
@@ -3113,10 +3111,6 @@ function cubicInOut(t) {
   return ((t *= 2) <= 1 ? t * t * t : (t -= 2) * t * t + 2) / 2;
 }
 
-var pi = Math.PI;
-
-var tau = 2 * Math.PI;
-
 var defaultTiming = {
   time: null, // Set on use.
   delay: 0,
@@ -3158,12 +3152,10 @@ function selection_transition(name) {
 selection.prototype.interrupt = selection_interrupt;
 selection.prototype.transition = selection_transition;
 
-var pi$1 = Math.PI;
-
-var pi$2 = Math.PI,
-    tau$1 = 2 * pi$2,
+var pi = Math.PI,
+    tau = 2 * pi,
     epsilon = 1e-6,
-    tauEpsilon = tau$1 - epsilon;
+    tauEpsilon = tau - epsilon;
 
 function Path() {
   this._x0 = this._y0 = // start of current subpath
@@ -3231,7 +3223,7 @@ Path.prototype = path.prototype = {
           l20_2 = x20 * x20 + y20 * y20,
           l21 = Math.sqrt(l21_2),
           l01 = Math.sqrt(l01_2),
-          l = r * Math.tan((pi$2 - Math.acos((l21_2 + l01_2 - l20_2) / (2 * l21 * l01))) / 2),
+          l = r * Math.tan((pi - Math.acos((l21_2 + l01_2 - l20_2) / (2 * l21 * l01))) / 2),
           t01 = l / l01,
           t21 = l / l21;
 
@@ -3269,7 +3261,7 @@ Path.prototype = path.prototype = {
     if (!r) return;
 
     // Does the angle go the wrong way? Flip the direction.
-    if (da < 0) da = da % tau$1 + tau$1;
+    if (da < 0) da = da % tau + tau;
 
     // Is this a complete circle? Draw two arcs to complete the circle.
     if (da > tauEpsilon) {
@@ -3278,7 +3270,7 @@ Path.prototype = path.prototype = {
 
     // Is this arc non-empty? Draw an arc!
     else if (da > epsilon) {
-      this._ += "A" + r + "," + r + ",0," + (+(da >= pi$2)) + "," + cw + "," + (this._x1 = x + r * Math.cos(a1)) + "," + (this._y1 = y + r * Math.sin(a1));
+      this._ += "A" + r + "," + r + ",0," + (+(da >= pi)) + "," + cw + "," + (this._x1 = x + r * Math.cos(a1)) + "," + (this._y1 = y + r * Math.sin(a1));
     }
   },
   rect: function(x, y, w, h) {
@@ -4756,13 +4748,13 @@ function add$1(adder, a, b) {
 }
 
 var epsilon$1 = 1e-6;
-var pi$3 = Math.PI;
-var halfPi = pi$3 / 2;
-var quarterPi = pi$3 / 4;
-var tau$2 = pi$3 * 2;
+var pi$1 = Math.PI;
+var halfPi = pi$1 / 2;
+var quarterPi = pi$1 / 4;
+var tau$1 = pi$1 * 2;
 
-var degrees$1 = 180 / pi$3;
-var radians = pi$3 / 180;
+var degrees$1 = 180 / pi$1;
+var radians = pi$1 / 180;
 
 var abs = Math.abs;
 var atan = Math.atan;
@@ -4773,7 +4765,7 @@ var sign = Math.sign || function(x) { return x > 0 ? 1 : x < 0 ? -1 : 0; };
 var sqrt = Math.sqrt;
 
 function acos(x) {
-  return x > 1 ? 0 : x < -1 ? pi$3 : Math.acos(x);
+  return x > 1 ? 0 : x < -1 ? pi$1 : Math.acos(x);
 }
 
 function asin(x) {
@@ -4904,13 +4896,13 @@ function compose(a, b) {
 }
 
 function rotationIdentity(lambda, phi) {
-  return [abs(lambda) > pi$3 ? lambda + Math.round(-lambda / tau$2) * tau$2 : lambda, phi];
+  return [abs(lambda) > pi$1 ? lambda + Math.round(-lambda / tau$1) * tau$1 : lambda, phi];
 }
 
 rotationIdentity.invert = rotationIdentity;
 
 function rotateRadians(deltaLambda, deltaPhi, deltaGamma) {
-  return (deltaLambda %= tau$2) ? (deltaPhi || deltaGamma ? compose(rotationLambda(deltaLambda), rotationPhiGamma(deltaPhi, deltaGamma))
+  return (deltaLambda %= tau$1) ? (deltaPhi || deltaGamma ? compose(rotationLambda(deltaLambda), rotationPhiGamma(deltaPhi, deltaGamma))
     : rotationLambda(deltaLambda))
     : (deltaPhi || deltaGamma ? rotationPhiGamma(deltaPhi, deltaGamma)
     : rotationIdentity);
@@ -4918,7 +4910,7 @@ function rotateRadians(deltaLambda, deltaPhi, deltaGamma) {
 
 function forwardRotationLambda(deltaLambda) {
   return function(lambda, phi) {
-    return lambda += deltaLambda, [lambda > pi$3 ? lambda - tau$2 : lambda < -pi$3 ? lambda + tau$2 : lambda, phi];
+    return lambda += deltaLambda, [lambda > pi$1 ? lambda - tau$1 : lambda < -pi$1 ? lambda + tau$1 : lambda, phi];
   };
 }
 
@@ -4968,12 +4960,12 @@ function circleStream(stream, radius, delta, direction, t0, t1) {
       sinRadius = sin(radius),
       step = direction * delta;
   if (t0 == null) {
-    t0 = radius + direction * tau$2;
+    t0 = radius + direction * tau$1;
     t1 = radius - step / 2;
   } else {
     t0 = circleRadius(cosRadius, t0);
     t1 = circleRadius(cosRadius, t1);
-    if (direction > 0 ? t0 < t1 : t0 > t1) t0 += direction * tau$2;
+    if (direction > 0 ? t0 < t1 : t0 > t1) t0 += direction * tau$1;
   }
   for (var point, t = t0; direction > 0 ? t > t1 : t < t1; t -= step) {
     point = spherical([cosRadius, -sinRadius * cos(t), -sinRadius * sin(t)]);
@@ -4986,7 +4978,7 @@ function circleRadius(cosRadius, point) {
   point = cartesian(point), point[0] -= cosRadius;
   cartesianNormalizeInPlace(point);
   var radius = acos(-point[1]);
-  return ((-point[2] < 0 ? -radius : radius) + tau$2 - epsilon$1) % tau$2;
+  return ((-point[2] < 0 ? -radius : radius) + tau$1 - epsilon$1) % tau$1;
 }
 
 function clipBuffer() {
@@ -5119,10 +5111,10 @@ function link$1(array) {
 var sum = adder();
 
 function longitude(point) {
-  if (abs(point[0]) <= pi$3)
+  if (abs(point[0]) <= pi$1)
     return point[0];
   else
-    return sign(point[0]) * ((abs(point[0]) + pi$3) % tau$2 - pi$3);
+    return sign(point[0]) * ((abs(point[0]) + pi$1) % tau$1 - pi$1);
 }
 
 function polygonContains(polygon, point) {
@@ -5157,11 +5149,11 @@ function polygonContains(polygon, point) {
           delta = lambda1 - lambda0,
           sign = delta >= 0 ? 1 : -1,
           absDelta = sign * delta,
-          antimeridian = absDelta > pi$3,
+          antimeridian = absDelta > pi$1,
           k = sinPhi0 * sinPhi1;
 
       sum.add(atan2(k * sign * sin(absDelta), cosPhi0 * cosPhi1 + k * cos(absDelta)));
-      angle += antimeridian ? delta + sign * tau$2 : delta;
+      angle += antimeridian ? delta + sign * tau$1 : delta;
 
       // Are the longitudes either side of the point’s meridian (lambda),
       // and are the latitudes smaller than the parallel (phi)?
@@ -5322,7 +5314,7 @@ var clipAntimeridian = clip(
   function() { return true; },
   clipAntimeridianLine,
   clipAntimeridianInterpolate,
-  [-pi$3, -halfPi]
+  [-pi$1, -halfPi]
 );
 
 // Takes a line and cuts into visible segments. Return values: 0 - there were
@@ -5340,9 +5332,9 @@ function clipAntimeridianLine(stream) {
       clean = 1;
     },
     point: function(lambda1, phi1) {
-      var sign1 = lambda1 > 0 ? pi$3 : -pi$3,
+      var sign1 = lambda1 > 0 ? pi$1 : -pi$1,
           delta = abs(lambda1 - lambda0);
-      if (abs(delta - pi$3) < epsilon$1) { // line crosses a pole
+      if (abs(delta - pi$1) < epsilon$1) { // line crosses a pole
         stream.point(lambda0, phi0 = (phi0 + phi1) / 2 > 0 ? halfPi : -halfPi);
         stream.point(sign0, phi0);
         stream.lineEnd();
@@ -5350,7 +5342,7 @@ function clipAntimeridianLine(stream) {
         stream.point(sign1, phi0);
         stream.point(lambda1, phi0);
         clean = 0;
-      } else if (sign0 !== sign1 && delta >= pi$3) { // line crosses antimeridian
+      } else if (sign0 !== sign1 && delta >= pi$1) { // line crosses antimeridian
         if (abs(lambda0 - sign0) < epsilon$1) lambda0 -= sign0 * epsilon$1; // handle degeneracies
         if (abs(lambda1 - sign1) < epsilon$1) lambda1 -= sign1 * epsilon$1;
         phi0 = clipAntimeridianIntersect(lambda0, phi0, lambda1, phi1);
@@ -5388,17 +5380,17 @@ function clipAntimeridianInterpolate(from, to, direction, stream) {
   var phi;
   if (from == null) {
     phi = direction * halfPi;
-    stream.point(-pi$3, phi);
+    stream.point(-pi$1, phi);
     stream.point(0, phi);
-    stream.point(pi$3, phi);
-    stream.point(pi$3, 0);
-    stream.point(pi$3, -phi);
+    stream.point(pi$1, phi);
+    stream.point(pi$1, 0);
+    stream.point(pi$1, -phi);
     stream.point(0, -phi);
-    stream.point(-pi$3, -phi);
-    stream.point(-pi$3, 0);
-    stream.point(-pi$3, phi);
+    stream.point(-pi$1, -phi);
+    stream.point(-pi$1, 0);
+    stream.point(-pi$1, phi);
   } else if (abs(from[0] - to[0]) > epsilon$1) {
-    var lambda = from[0] < to[0] ? pi$3 : -pi$3;
+    var lambda = from[0] < to[0] ? pi$1 : -pi$1;
     phi = direction * lambda / 2;
     stream.point(-lambda, phi);
     stream.point(0, phi);
@@ -5443,7 +5435,7 @@ function clipCircle(radius) {
             v = visible(lambda, phi),
             c = smallRadius
               ? v ? 0 : code(lambda, phi)
-              : v ? code(lambda + (lambda < 0 ? pi$3 : -pi$3), phi) : 0;
+              : v ? code(lambda + (lambda < 0 ? pi$1 : -pi$1), phi) : 0;
         if (!point0 && (v00 = v0 = v)) stream.lineStart();
         // Handle degeneracies.
         // TODO ignore if not clipping polygons.
@@ -5553,7 +5545,7 @@ function clipCircle(radius) {
     if (lambda1 < lambda0) z = lambda0, lambda0 = lambda1, lambda1 = z;
 
     var delta = lambda1 - lambda0,
-        polar = abs(delta - pi$3) < epsilon$1,
+        polar = abs(delta - pi$1) < epsilon$1,
         meridian = polar || delta < epsilon$1;
 
     if (!polar && phi1 < phi0) z = phi0, phi0 = phi1, phi1 = z;
@@ -5563,7 +5555,7 @@ function clipCircle(radius) {
         ? polar
           ? phi0 + phi1 > 0 ^ q[1] < (abs(q[0] - lambda0) < epsilon$1 ? phi0 : phi1)
           : phi0 <= q[1] && q[1] <= phi1
-        : delta > pi$3 ^ (lambda0 <= q[0] && q[0] <= lambda1)) {
+        : delta > pi$1 ^ (lambda0 <= q[0] && q[0] <= lambda1)) {
       var q1 = cartesianScale(u, (-w + t) / uu);
       cartesianAddInPlace(q1, A);
       return [q, spherical(q1)];
@@ -5573,7 +5565,7 @@ function clipCircle(radius) {
   // Generates a 4-bit vector representing the location of a point relative to
   // the small circle's bounding box.
   function code(lambda, phi) {
-    var r = smallRadius ? radius : pi$3 - radius,
+    var r = smallRadius ? radius : pi$1 - radius,
         code = 0;
     if (lambda < -r) code |= 1; // left
     else if (lambda > r) code |= 2; // right
@@ -5582,7 +5574,7 @@ function clipCircle(radius) {
     return code;
   }
 
-  return clip(visible, clipLine, interpolate, smallRadius ? [0, -radius] : [-pi$3, radius - pi$3]);
+  return clip(visible, clipLine, interpolate, smallRadius ? [0, -radius] : [-pi$1, radius - pi$1]);
 }
 
 function clipLine(a, b, x0, y0, x1, y1) {
@@ -6016,7 +6008,7 @@ PathContext.prototype = {
       }
       default: {
         this._context.moveTo(x + this._radius, y);
-        this._context.arc(x, y, this._radius, 0, tau$2);
+        this._context.arc(x, y, this._radius, 0, tau$1);
         break;
       }
     }
@@ -6494,7 +6486,7 @@ function projectionMutator(projectAt) {
 
 function conicProjection(projectAt) {
   var phi0 = 0,
-      phi1 = pi$3 / 3,
+      phi1 = pi$1 / 3,
       m = projectionMutator(projectAt),
       p = m(phi0, phi1);
 
@@ -7940,9 +7932,7 @@ function rainbow(t) {
   return c + "";
 }
 
-var c$1 = rgb(),
-    pi_1_3 = Math.PI / 3,
-    pi_2_3 = Math.PI * 2 / 3;
+var c$1 = rgb();
 
 function ramp$1(range) {
   var n = range.length;
@@ -7966,8 +7956,8 @@ function constant$4(x) {
 }
 
 var epsilon$2 = 1e-12;
-var pi$4 = Math.PI;
-var tau$3 = 2 * pi$4;
+var pi$2 = Math.PI;
+var tau$2 = 2 * pi$2;
 
 function Linear(context) {
   this._context = context;
@@ -8062,9 +8052,9 @@ function line() {
 
 var circle$1 = {
   draw: function(context, size) {
-    var r = Math.sqrt(size / pi$4);
+    var r = Math.sqrt(size / pi$2);
     context.moveTo(r, 0);
-    context.arc(0, 0, r, 0, tau$3);
+    context.arc(0, 0, r, 0, tau$2);
   }
 };
 
@@ -10450,8 +10440,8 @@ function every(func) {
   return true;
 }
 
-// Set each node's value to zero for root nodes and the greatest distance to
-// any root for other nodes
+// Set each node's value to zero for leaf nodes and the greatest distance to
+// any leaf for other nodes
 function height() {
   return this.eachAfter(
     (n) => (n.value = Math.max(0, ...n.children.map((c) => 1 + c.value)))
@@ -14422,7 +14412,7 @@ function coffmanGraham() {
 }
 
 // Assign a value for the layer of each node that minimizes the length of the longest path
-function longestPath() {
+function layeringLongestPath() {
   let topDown = true;
 
   function layeringLongestPath(dag) {
@@ -16892,7 +16882,7 @@ var DAG = /** @class */ (function (_super) {
         var defs = svgNode.append('defs'); // For gradients
         var layerings = {
             'Coffman Graham (medium)': coffmanGraham(),
-            'Longest Path (fast)': longestPath(),
+            'Longest Path (fast)': layeringLongestPath(),
             'Simplex (slow)': simplex(),
         };
         var decrossings = {
@@ -17356,8 +17346,6 @@ function extractArcs(topology, object, filter) {
 
   return arcs;
 }
-
-var pi$5 = Math.PI;
 
 var css$1 = ".land{fill:#ddd}.state-borders{fill:none;stroke:#fff}.airport-arc{fill:none}.airport:hover .airport-arc{stroke:red}.airport-cell{fill:none;stroke:#000;stroke-opacity:.1;pointer-events:all}";
 styleInject(css$1);

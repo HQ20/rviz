@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import { VoroniArcMap, DAG, ForceDirected } from 'reviz'
+import { VoroniArcMap, DAG, ForceDirected } from 'rviz'
 import dataDAG from './dummyData/DAG';
 import dataForceDirected from './dummyData/ForceDirected';
 
