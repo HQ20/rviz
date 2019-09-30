@@ -28,7 +28,7 @@
         "postcss-cssnext": "3.1.0",
         "prop-types": "15.7.2",
         "react": "16.9.0",
-        "react-dom": "16.9.0",
+        "react-dom": "16.10.1",
         "topojson": "3.0.2"
     },
     "devDependencies": {
@@ -40,7 +40,7 @@
         "babel-runtime": "6.26.0",
         "cross-env": "6.0.0",
         "react": "16.9.0",
-        "react-dom": "16.9.0",
+        "react-dom": "16.10.1",
         "react-scripts-ts": "3.1.0",
         "rollup": "1.21.4",
         "rollup-plugin-babel": "4.3.3",
