@@ -3621,14 +3621,14 @@ d3-contour@1:
   dependencies:
     d3-array "^1.1.1"
 
-d3-dag@0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/d3-dag/-/d3-dag-0.3.0.tgz#3c4ed5a88dd8d94cbceb61bfade1f8f5235d6814"
-  integrity sha512-taPxO2LMBQmbKI/d9fu4056quJa5Yn+2iRldxdhFZDDR98vhtrGn9synVHEEmAic81oIXbYzg7ACZZ6UxHCYaA==
+d3-dag@0.3.3:
+  version "0.3.3"
+  resolved "https://registry.yarnpkg.com/d3-dag/-/d3-dag-0.3.3.tgz#7a48aac92ad8736e2773b75c25359ee09ed23316"
+  integrity sha512-CKBaIPMq9hc2u2GLzP9wqdphh/i3WhDX3r/QEhzPzShHmhI9l0gA4GUpqtYOpf4IMpYrvdK9nGtkRUyeo3e1BQ==
   dependencies:
     d3-array "^1.2.1"
     fastpriorityqueue "^0.5.0"
-    javascript-lp-solver "^0.4.5"
+    javascript-lp-solver "0.4.17"
     quadprog-js "^0.1.3"
 
 d3-dispatch@1:
@@ -6081,10 +6081,10 @@ istanbul-reports@^1.5.1:
   dependencies:
     handlebars "^4.0.3"
 
-javascript-lp-solver@^0.4.5:
-  version "0.4.5"
-  resolved "https://registry.yarnpkg.com/javascript-lp-solver/-/javascript-lp-solver-0.4.5.tgz#597106f586b4843a4ce51c7e6dc8a91f8a929c3f"
-  integrity sha1-WXEG9Ya0hDpM5Rx+bcipH4qSnD8=
+javascript-lp-solver@0.4.17:
+  version "0.4.17"
+  resolved "https://registry.yarnpkg.com/javascript-lp-solver/-/javascript-lp-solver-0.4.17.tgz#dae77b9202af23e4da656e72836e4d2b3c3a6eee"
+  integrity sha512-kJtkZ0RRaCUx7cKu/EDSvjftbZSaLMx3KQ1NL3YS7ZfXhC7bqLtjY1pkkn9cP3cii8HghD3VpyvBFILXyBP07A==
 
 jest-changed-files@^20.0.3:
   version "20.0.3"
