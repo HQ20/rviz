@@ -26,7 +26,7 @@
         "esModuleInterop": true,
         "strict": true,
         "resolveJsonModule": true,
-        "isolatedModules": true,
+        "declaration": true,
         "noEmit": true
     },
     "include": [

@@ -11,4 +11,4 @@
     publish = "build/"
 
     # Default build command.
-    command = "(cd .. && yarn build) && yarn build"
+    command = "yarn build"

@@ -4,6 +4,7 @@
     "author": "HQ20",
     "license": "Apache-2.0",
     "repository": "hq20/rviz",
+    "types":"dist/index.d.ts",
     "main": "dist/index.js",
     "module": "dist/index.es.js",
     "jsnext:main": "dist/index.es.js",
