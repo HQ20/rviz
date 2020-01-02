@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
-import { VoroniArcMap, DAG, ForceDirected } from 'rviz'
+import { DAG, ForceDirected, VoroniArcMap } from 'rviz';
 import dataDAG from './dummyData/DAG';
 import dataForceDirected from './dummyData/ForceDirected';
 
-export default class App extends Component {
-    render() {
+export default class App extends Component<{}, {}> {
+    public render() {
         return (
             <div>
                 <VoroniArcMap width={980} height={540} />
@@ -16,7 +16,8 @@ export default class App extends Component {
                     layering={'Simplex (slow)'}
                     decross={'Optimal (slow)'}
                     coord={'Vertical (slow)'}
-                    arrow={'end'} />
+                    arrow={'end'}
+                />
 
                 <ForceDirected
                     width={600}
@@ -24,6 +25,6 @@ export default class App extends Component {
                     graph={dataForceDirected}
                 />
             </div>
-        )
+        );
     }
 }
