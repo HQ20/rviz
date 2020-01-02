@@ -22,32 +22,32 @@
         "prepare": "yarn build"
     },
     "dependencies": {
-        "d3": "5.12.0",
-        "d3-dag": "0.3.0",
-        "d3-scale": "3.1.0",
-        "react": "16.9.0",
-        "react-dom": "16.9.0",
+        "d3": "5.15.0",
+        "d3-dag": "0.3.3",
+        "d3-scale": "3.2.1",
+        "react": "16.12.0",
+        "react-dom": "16.12.0",
         "topojson": "3.0.2"
     },
     "devDependencies": {
-        "@svgr/rollup": "4.3.2",
+        "@svgr/rollup": "5.0.1",
         "@testing-library/jest-dom": "4.2.4",
-        "@testing-library/react": "9.3.2",
-        "@testing-library/user-event": "7.1.2",
+        "@testing-library/react": "9.4.0",
+        "@testing-library/user-event": "8.0.2",
         "@types/d3": "5.7.2",
-        "@types/jest": "24.0.18",
-        "@types/react": "16.9.2",
-        "@types/react-dom": "16.9.0",
+        "@types/jest": "24.0.25",
+        "@types/react": "16.9.17",
+        "@types/react-dom": "16.9.4",
         "postcss-cssnext": "3.1.0",
-        "react-scripts": "3.1.0",
-        "rollup": "1.21.4",
+        "react-scripts": "3.3.0",
+        "rollup": "1.27.14",
         "rollup-plugin-babel": "4.3.3",
         "rollup-plugin-commonjs": "10.1.0",
         "rollup-plugin-node-resolve": "5.2.0",
         "rollup-plugin-peer-deps-external": "2.2.0",
         "rollup-plugin-postcss": "2.0.3",
-        "rollup-plugin-typescript2": "0.24.2",
-        "rollup-plugin-url": "2.2.2",
-        "typescript": "3.6.3"
+        "rollup-plugin-typescript2": "0.25.3",
+        "rollup-plugin-url": "3.0.1",
+        "typescript": "3.7.4"
     }
 }
