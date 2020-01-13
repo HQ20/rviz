@@ -4570,10 +4570,10 @@ d3-contour@1:
   dependencies:
     d3-array "^1.1.1"
 
-d3-dag@0.3.3:
-  version "0.3.3"
-  resolved "https://registry.yarnpkg.com/d3-dag/-/d3-dag-0.3.3.tgz#7a48aac92ad8736e2773b75c25359ee09ed23316"
-  integrity sha512-CKBaIPMq9hc2u2GLzP9wqdphh/i3WhDX3r/QEhzPzShHmhI9l0gA4GUpqtYOpf4IMpYrvdK9nGtkRUyeo3e1BQ==
+d3-dag@0.3.4:
+  version "0.3.4"
+  resolved "https://registry.yarnpkg.com/d3-dag/-/d3-dag-0.3.4.tgz#c995e6ff8312eed45be9d88b004e001e2c73ee75"
+  integrity sha512-6GY1HTt46vND13zEf9wBjPQi2W7VA5WLLfQu4XJZQBQ8CSjNL0tipWiijuAYQcDCgpxVHc2EwlPIVrzi4Vvzmw==
   dependencies:
     d3-array "^1.2.1"
     fastpriorityqueue "^0.5.0"
