@@ -9,7 +9,7 @@
         "eject": "react-scripts eject"
     },
     "dependencies": {
-        "@testing-library/jest-dom": "5.0.0",
+        "@testing-library/jest-dom": "5.0.2",
         "@testing-library/react": "9.4.0",
         "@testing-library/user-event": "8.0.3",
         "@types/jest": "24.9.0",
