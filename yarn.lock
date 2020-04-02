@@ -4497,10 +4497,10 @@ d3-contour@1:
   dependencies:
     d3-array "^1.1.1"
 
-d3-dag@0.3.4:
-  version "0.3.4"
-  resolved "https://registry.yarnpkg.com/d3-dag/-/d3-dag-0.3.4.tgz#c995e6ff8312eed45be9d88b004e001e2c73ee75"
-  integrity sha512-6GY1HTt46vND13zEf9wBjPQi2W7VA5WLLfQu4XJZQBQ8CSjNL0tipWiijuAYQcDCgpxVHc2EwlPIVrzi4Vvzmw==
+d3-dag@0.3.5:
+  version "0.3.5"
+  resolved "https://registry.yarnpkg.com/d3-dag/-/d3-dag-0.3.5.tgz#4c60b45c4192be34f2cb7ef334dadd435b062e6f"
+  integrity sha512-F6WIGLTWcHD7LTW+0MxnNlJxfhX1SMMVoZ/Evo3YboDnaqSkqgUYdwqFeJ8CqWmEG2lUaJZjl8LJJB0hUt19Fw==
   dependencies:
     d3-array "^1.2.1"
     fastpriorityqueue "^0.5.0"
