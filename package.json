@@ -23,7 +23,7 @@
         "prepare": "yarn build"
     },
     "dependencies": {
-        "d3": "5.15.0",
+        "d3": "5.15.1",
         "d3-dag": "0.3.4",
         "d3-scale": "3.2.1",
         "react": "16.13.1",
