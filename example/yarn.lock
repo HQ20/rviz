@@ -2173,10 +2173,10 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@16.9.31":
-  version "16.9.31"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.31.tgz#6a543529766c8934ec8a89667376c2e73e9e2636"
-  integrity sha512-NpYJpNMWScFXtx3A2BJMeew2G3+9SEslVWMdxNJ6DLvxIuxWjY1bizK9q5Y1ujhln31vtjmhjOAYDr9Xx3k9FQ==
+"@types/react@*", "@types/react@16.9.32":
+  version "16.9.32"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.32.tgz#f6368625b224604148d1ddf5920e4fefbd98d383"
+  integrity sha512-fmejdp0CTH00mOJmxUPPbWCEBWPvRIL4m8r0qD+BSDUqmutPyGQCHifzMpMzdvZwROdEdL78IuZItntFWgPXHQ==
   dependencies:
     "@types/prop-types" "*"
     csstype "^2.2.0"
@@ -4208,10 +4208,10 @@ d3-contour@1:
   dependencies:
     d3-array "^1.1.1"
 
-d3-dag@0.3.4:
-  version "0.3.4"
-  resolved "https://registry.yarnpkg.com/d3-dag/-/d3-dag-0.3.4.tgz#c995e6ff8312eed45be9d88b004e001e2c73ee75"
-  integrity sha512-6GY1HTt46vND13zEf9wBjPQi2W7VA5WLLfQu4XJZQBQ8CSjNL0tipWiijuAYQcDCgpxVHc2EwlPIVrzi4Vvzmw==
+d3-dag@0.3.5:
+  version "0.3.5"
+  resolved "https://registry.yarnpkg.com/d3-dag/-/d3-dag-0.3.5.tgz#4c60b45c4192be34f2cb7ef334dadd435b062e6f"
+  integrity sha512-F6WIGLTWcHD7LTW+0MxnNlJxfhX1SMMVoZ/Evo3YboDnaqSkqgUYdwqFeJ8CqWmEG2lUaJZjl8LJJB0hUt19Fw==
   dependencies:
     d3-array "^1.2.1"
     fastpriorityqueue "^0.5.0"
@@ -4394,10 +4394,10 @@ d3-zoom@1:
     d3-selection "1"
     d3-transition "1"
 
-d3@5.15.0:
-  version "5.15.0"
-  resolved "https://registry.yarnpkg.com/d3/-/d3-5.15.0.tgz#ffd44958e6a3cb8a59a84429c45429b8bca5677a"
-  integrity sha512-C+E80SL2nLLtmykZ6klwYj5rPqB5nlfN5LdWEAVdWPppqTD8taoJi2PxLZjPeYT8FFRR2yucXq+kBlOnnvZeLg==
+d3@5.15.1:
+  version "5.15.1"
+  resolved "https://registry.yarnpkg.com/d3/-/d3-5.15.1.tgz#7a8f32208559505bf1f56537a31c3fb8e76a519b"
+  integrity sha512-Xu9gT6Lm0jH3wWJJSRomFwqnGGi3YAfWIfxNFl4++YVgYOjo3F8V2idAG3nJBgpZOkD0/RHPZX6F4k6tzgOvYw==
   dependencies:
     d3-array "1"
     d3-axis "1"
@@ -10154,8 +10154,8 @@ run-queue@^1.0.0, run-queue@^1.0.3:
 "rviz@link:..":
   version "0.0.1-alpha"
   dependencies:
-    d3 "5.15.0"
-    d3-dag "0.3.4"
+    d3 "5.15.1"
+    d3-dag "0.3.5"
     d3-scale "3.2.1"
     react "16.13.1"
     react-dom "16.13.1"
