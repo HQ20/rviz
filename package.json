@@ -41,7 +41,7 @@
         "@types/react-dom": "16.9.6",
         "postcss-cssnext": "3.1.0",
         "react-scripts": "3.4.1",
-        "rollup": "2.4.0",
+        "rollup": "2.6.1",
         "rollup-plugin-babel": "4.4.0",
         "rollup-plugin-commonjs": "10.1.0",
         "rollup-plugin-node-resolve": "5.2.0",
